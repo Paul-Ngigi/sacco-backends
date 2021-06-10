@@ -1,6 +1,5 @@
 name: Deploy to heroku.
 
-# Run workflow on every push to master branch.
 on:
   push:
     branches: [dev]
@@ -10,11 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Check-out your repository.
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
-        uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
+      - name: Build, Push and Release a Docker container to Heroku.
+        uses: gonuit/heroku-docker-deploy@v1.3.3
         with:
           # email: ${{ secrets.HEROKU_EMAIL }}
           # heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
@@ -22,7 +20,7 @@ jobs:
           email: odongoedwin69@gmail.com
           heroku_api_key: 302185b2-d0ac-4d13-9709-63443c5f3996
           heroku_app_name: sacco-backends
-          dockerfile_directory: ../../src/main/docker/
+          dockerfile_directory: ./
           dockerfile_name: Dockerfile
           docker_options: "--no-cache"
           process_type: web
