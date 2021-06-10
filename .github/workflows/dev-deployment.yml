@@ -9,9 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install dependencies
-        run:
-          python3 script.py
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build, Push and Release a Docker container to Heroku.
@@ -23,7 +20,7 @@ jobs:
           email: odongoedwin69@gmail.com
           heroku_api_key: 302185b2-d0ac-4d13-9709-63443c5f3996
           heroku_app_name: sacco-backend
-          dockerfile_directory: ./
+          dockerfile_directory: ./src/main/docker
           dockerfile_name: Dockerfile
           docker_options: "--no-cache"
           process_type: web
