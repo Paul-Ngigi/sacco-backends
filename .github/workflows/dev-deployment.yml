@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: 11
       - name: Package Service with Maven
-        run: mvn package -Pnative -Dquarkus.native.container-build=true
+        run: mvn package -DskipTests -Pnative  -Dquarkus.native.container-build=true
       - name: Build, Push and Release a Docker container to Heroku.
         uses: gonuit/heroku-docker-deploy@v1.3.3
         with:
