@@ -1,3 +1,3 @@
- import os
- arr = os.listdir()
- print(arr)
+import os
+arr = os.listdir("../../../")
+print(arr)
