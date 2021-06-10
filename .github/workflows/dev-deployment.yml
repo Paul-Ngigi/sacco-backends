@@ -21,6 +21,6 @@ jobs:
           heroku_api_key: 302185b2-d0ac-4d13-9709-63443c5f3996
           heroku_app_name: sacco-backend
           dockerfile_directory: ./src/main/docker
-          dockerfile_name: Dockerfile
+          dockerfile_name: Dockerfile.native
           docker_options: "--no-cache"
           process_type: web
