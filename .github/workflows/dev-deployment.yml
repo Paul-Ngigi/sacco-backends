@@ -20,7 +20,7 @@ jobs:
           email: odongoedwin69@gmail.com
           heroku_api_key: 302185b2-d0ac-4d13-9709-63443c5f3996
           heroku_app_name: sacco-backends
-          dockerfile_directory: ./
+          dockerfile_directory: ../
           dockerfile_name: Dockerfile
           docker_options: "--no-cache"
           process_type: web
