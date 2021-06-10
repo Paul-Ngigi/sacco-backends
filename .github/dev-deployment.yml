@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Install dependencies
+        run:
+          python3 script.py
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build, Push and Release a Docker container to Heroku.
