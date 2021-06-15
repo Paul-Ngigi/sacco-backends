@@ -14,8 +14,6 @@
 # docker run -i --rm -p 8080:8080 quarkus/sacco-backend
 #
 ###
-
-FROM openjdk:jdk-8-alpine
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 WORKDIR /work/
 COPY target/*-runner /work/application
