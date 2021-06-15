@@ -16,7 +16,9 @@ jobs:
         with:
           java-version: 11
       - name: Package Service with Maven
-        run: mvn package -DskipTests -Pnative  -Dquarkus.native.container-build=true
+        run: mvn zpackage -DskipTests -Pnative  -Dquarkus.native.container-build=true
+      - name: See Folder Structure
+        run: ./script.py
       - name: Build, Push and Release a Docker container to Heroku.
         uses: gonuit/heroku-docker-deploy@v1.3.3
         with:
@@ -24,8 +26,8 @@ jobs:
           # heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           # heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           email: odongoedwin69@gmail.com
-          heroku_api_key: 302185b2-d0ac-4d13-9709-63443c5f3996
-          heroku_app_name: sacco-backend
+          heroku_api_key: 796e4fd8-6afa-46a9-910d-8e4868f624e7
+          heroku_app_name: sacco-backends
           dockerfile_directory: ./src/main/docker
           dockerfile_name: Dockerfile.native
           docker_options: "--no-cache"
