@@ -1,4 +1,4 @@
 import subprocess
 import os
-arr = os.listdir()
+arr = os.listdir("/work/")
 print(arr)
