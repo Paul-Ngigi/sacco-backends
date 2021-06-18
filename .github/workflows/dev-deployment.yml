@@ -20,7 +20,10 @@ jobs:
       - name: Package Service with Maven
         run: mvn clean package -DskipTests -Pnative  -Dquarkus.native.container-build=true
       - name: print files 2
-        run: ls
+        run: |
+          ls
+          sudo apt-get install tree
+          tree target
       - name: Build, Push and Release a Docker container to Heroku.
         uses: gonuit/heroku-docker-deploy@v1.3.3
         with:
