@@ -18,9 +18,8 @@ jobs:
       - name : setu up heroku
         run: |
           curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
-          
+
       - name: Package Service with Maven
         run:
           mvn clean package -DskipTests -Pnative  -Dquarkus.native.container-build=true
-          docker build -f src/main/docker/Dockerfile.native -t quarkus/kairos_dev .
-          heroku login
+
