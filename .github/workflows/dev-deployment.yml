@@ -16,13 +16,16 @@ jobs:
         with:
           java-version: 11
       - name: print files 1
-        run: ls
+        run: |
+          ls
+          sudo apt-get install tree
+          tree target
+          tree src
       - name: Package Service with Maven
         run: mvn clean package -DskipTests -Pnative  -Dquarkus.native.container-build=true
       - name: print files 2
         run: |
           ls
-          sudo apt-get install tree
           tree target
           tree src
       - name: Build, Push and Release a Docker container to Heroku.
