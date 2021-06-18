@@ -23,7 +23,7 @@
 
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 WORKDIR /work/
-COPY target/*-runner /work/application
+COPY /target/sacco-backend-1.0.0-runner /work/application
 RUN /bin/bash
 RUN ls
 RUN chmod 775 /work
