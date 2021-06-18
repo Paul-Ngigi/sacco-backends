@@ -15,10 +15,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      # - name : setu up heroku
-      #   run: |
-      #     curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
-
+      - name : setup heroku
+        run: |
+        echo "machine git.heroku.com
+                login me@example.com
+                password c4cd94da15ea0544802c2cfd5ec4ead324327430" > ~/.netrc
       - name: Package Service with Maven
         run:
           mvn clean package -DskipTests -Pnative  -Dquarkus.native.container-build=true
