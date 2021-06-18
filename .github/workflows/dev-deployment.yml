@@ -15,9 +15,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: print files 1
+        run: ls
       - name: Package Service with Maven
         run: mvn clean package -DskipTests -Pnative  -Dquarkus.native.container-build=true
-      - name: print files
+      - name: print files 2
         run: ls
       - name: Build, Push and Release a Docker container to Heroku.
         uses: gonuit/heroku-docker-deploy@v1.3.3
